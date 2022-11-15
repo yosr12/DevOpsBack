@@ -42,5 +42,24 @@ pipeline {
                   nexusArtifactUploader artifacts: [[artifactId: 'achat', classifier: '', file: '/var/lib/jenkins/workspace/DevOpsBack/target/achat-1.0.jar', type: 'jar']], credentialsId: 'nexus-snapshots', groupId: 'tn.esprit.rh', nexusUrl: '192.168.56.11:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexus-snapshots', version: '1.0.0'
                  }
               }
+                stage('Build Docker Image') {
+                 steps {
+                 sh 'docker build -t yoser/spring:1.0.0 .'
+                 }
+              }
+
+              stage('Push Docker Image') {
+                   //steps {
+                    // withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                     sh "docker login -u yoser -p adminadmin"
+                    //  }
+                     sh 'docker push yoser/spring:1.0.0'
+                //    }
+              }
+              stage('DOCKER COMPOSE') {
+                   steps {
+                      sh 'docker-compose up -d --build'
+                   }
+              }
          }
               }
