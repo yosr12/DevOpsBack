@@ -51,6 +51,7 @@ pipeline {
               stage('Push Docker Image') {
                    steps {
                     withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                     sh "docker login -u yoser -p ${DockerhubPWS}"
                     
                       }
                      sh 'docker push yoser/spring:1.0.0'
@@ -64,5 +65,5 @@ pipeline {
               }
          }
          }
-         }
+         
          
