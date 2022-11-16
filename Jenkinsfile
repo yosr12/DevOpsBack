@@ -56,6 +56,7 @@ pipeline {
                      sh 'docker push yoser/spring:1.0.0'
                 
               }
+              }
               stage('DOCKER COMPOSE') {
                    steps {
                       sh 'docker-compose up -d --build'
@@ -64,3 +65,4 @@ pipeline {
          }
          }
          }
+         
