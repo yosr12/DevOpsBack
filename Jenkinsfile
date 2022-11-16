@@ -50,16 +50,16 @@ pipeline {
 
               stage('Push Docker Image') {
                    steps {
-                    // withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
-                    sh "docker login -u yoser -p adminadmin"
-                    //  }
+                    withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                    
+                      }
                      sh 'docker push yoser/spring:1.0.0'
-                //    }
+                
               }
-             // stage('DOCKER COMPOSE') {
-                 //  steps {
-                    //  sh 'docker-compose up -d --build'
-                  // }
+              stage('DOCKER COMPOSE') {
+                   steps {
+                      sh 'docker-compose up -d --build'
+                   }
               }
          }
               
