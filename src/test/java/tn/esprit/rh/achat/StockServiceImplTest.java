@@ -17,6 +17,7 @@ import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 import org.springframework.test.context.junit4.SpringRunner;
 import tn.esprit.rh.achat.entities.Stock;
+import tn.esprit.rh.achat.services.StockServiceImpl;
 
 
 import java.util.Optional;
