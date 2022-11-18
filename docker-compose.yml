@@ -18,6 +18,6 @@ services:
     container_name: dockerfile_springFinal1
     ports:
       - '8089:8089'
-    image: aymenjbara/spring:1.0.0
+    image: yoser/spring:1.0.0
 volumes:
   mysql-containerFinal1: { }
