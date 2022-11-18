@@ -1,8 +1,8 @@
-package com.esprit.examen.services;
+package tn.esprit.rh.achat;
 
 import static org.junit.Assert.*;
 
-import com.esprit.examen.repositories.StockRepository;
+import tn.esprit.rh.achat.repositories.StockRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
@@ -16,7 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 import org.springframework.test.context.junit4.SpringRunner;
-import com.esprit.examen.entities.Stock;
+import tn.esprit.rh.achat.entities.Stock;
 
 
 import java.util.Optional;
