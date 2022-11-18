@@ -50,7 +50,7 @@ pipeline {
 
               stage('Push Docker Image') {
                    steps {
-                     sh 'docker login -username yoser -passowrd adminadmin'
+                     sh 'docker login --username yoser --password adminadmin'
                      sh 'docker push yoser/spring:1.0.0'
                 
               }
