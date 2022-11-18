@@ -5,8 +5,8 @@ pipeline {
             stage('Checkout GIT'){
                 steps{
                     echo 'Pulling...';
-                    git branch: 'AymenBack',
-                    url : 'https://github.com/khalsibadis/devOps-Backend.git';
+                    git branch: 'yosrBack',
+                    url : 'https://github.com/yosr12/DevOpsBack.git';
                 }
 
             }
@@ -50,10 +50,7 @@ pipeline {
 
               stage('Push Docker Image') {
                    steps {
-                    withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
-                     sh "docker login -u yoser -p ${DockerhubPWS}"
-                    
-                      }
+                     sh 'docker login -username yoser -passowrd adminadmin'
                      sh 'docker push yoser/spring:1.0.0'
                 
               }
